@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Coffee Website
+
+A modern, animated restaurant website built with Next.js, featuring smooth scroll animations and engaging user interactions.
+
+## Tech Stack
+
+- **Next.js** - React framework for production
+- **Tailwind CSS** - Utility-first CSS framework
+- **Motion** - Animation library for scroll and interaction effects
+- **TypeScript/JavaScript** - For type-safe development
+
+## Features
+
+- 🎨 Modern, responsive design
+- ✨ Smooth scroll animations with Motion's `inView`
+- 🎭 Stagger animations for menu items and navigation
+- 🛒 Shopping cart functionality
+- 📱 Mobile-friendly interface
+- ⚡ Optimized performance with Next.js
+
+## Live Demo
+
+https://breakfast-site-coral.vercel.app/
+
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository
+
+git clone <your-repo-url>
+cd restaurant-website
+
+
+2. Install dependencies
+npm install
+
+
+3. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### Animation Patterns
 
-To learn more about Next.js, take a look at the following resources:
+The project uses Motion library for animations:
+- Scroll-triggered animations with `inView`
+- Staggered list animations
+- Hover effects and transitions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm run build
 
-## Deploy on Vercel
+npm start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
+
+---
+
+Built with ❤️ using Next.js and Motion
