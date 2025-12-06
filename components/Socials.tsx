@@ -1,11 +1,42 @@
+'use client'
+import Link from "next/link"
 import { Call, Facebook, Gps, Instagram, Telegram } from "./Svgs"
-
+import { motion, useAnimate, useInView } from "motion/react"
+import { useEffect, useState } from "react"
 
 
 export const Socials = () => {
+    const [scope, animate] = useAnimate()
+    const isInView = useInView(scope, { margin: "-20% 0px", amount: 0.3, once: true })
+    const [hasAnimated, setHasAnimated] = useState(false)
+
+    const parent = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.5,
+        },
+    },
+    }
+
+    const child = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+    }
+
+    useEffect(() => {
+        if (isInView && !hasAnimated) {
+        setHasAnimated(true)
+        }
+    }, [isInView, hasAnimated])
+
+
     return (
-        <div className="w-full bg-linear-to-r from-amber-500 to-amber-600 text-white grid grid-cols-3 py-8 px-8">
-            <div className="flex flex-col gap-6">
+        <motion.div ref={scope} variants={parent} initial="hidden" animate={hasAnimated ? "show" : "hidden"} className="w-full bg-linear-to-r from-amber-500 to-amber-600 text-white grid grid-cols-3 py-8 px-8">
+            <motion.div variants={child} className="flex flex-col gap-6">
                 <h1 className="text-3xl font-bold uppercase">coders cafe</h1>
                 <p className="max-w-3xs text-sm">
                     Thank you for stopping by and sharing a moment with us.
@@ -22,9 +53,9 @@ export const Socials = () => {
                         <p>Noida, Uttar Pradesh</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col gap-6">
+            <motion.div variants={child} className="flex flex-col gap-6">
                 <h1 className="text-3xl font-bold">Quick Links</h1>
                 <div className="flex flex-col gap-2">
                     <p>Home</p>
@@ -32,22 +63,22 @@ export const Socials = () => {
                     <p>Contact</p>
                     <p>Privacy Policy</p>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col gap-6">
+            <motion.div variants={child} className="flex flex-col gap-6">
                 <div className="flex flex-col gap-4">
                     <h1 className="text-3xl font-bold">Follow Us</h1>
                     <div className="flex gap-3">
-                        <Facebook />
-                        <Instagram />
-                        <Telegram />
+                        <Link href={"https://x.com/XkaranMe"}> <Facebook /> </Link>
+                        <Link href={"https://x.com/XkaranMe"}> <Instagram /> </Link>
+                        <Link href={"https://x.com/XkaranMe"}> <Telegram /> </Link>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
                     <p className="text-xl font-medium">Payment Methods</p>
                     <img className="w-[80%]" src="/website/credit-cards.webp" alt="" />
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }
