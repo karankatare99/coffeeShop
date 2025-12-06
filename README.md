@@ -20,7 +20,7 @@ A modern, animated restaurant website built with Next.js, featuring smooth scrol
 
 ## Live Demo
 
-https://breakfast-site-coral.vercel.app/
+https://coffee-shop-two-phi.vercel.app/
 
 
 ## Getting Started
